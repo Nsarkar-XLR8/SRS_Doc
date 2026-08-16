@@ -25,16 +25,16 @@
 
 ## 📚 Document & Portfolio Navigation
 
-- 🌐 **[Live Web Reader App (GitHub Pages)](https://nsarkar-xlr8.github.io/SRS_Doc/)**: Interactive web application featuring live PDF viewing, Lenis smooth scrolling, GSAP animations, and Mermaid diagram swapper.
-- 🧭 **[Master Navigation Index](file:///home/nayem/Personal/SRS/SRS_Doc/INDEX.md)**: Detailed chapter breakdown of the complete 63-page SRS specification.
-- 🎯 **[Recruiter & Career Showcase Guide](file:///home/nayem/Personal/SRS/SRS_Doc/CAREER_SHOWCASE_GUIDE.md)**: Resume bullet points, interview talking points, and LinkedIn templates.
-- 📁 **[Structured Technical Documentation Directory (`/docs`)](file:///home/nayem/Personal/SRS/SRS_Doc/docs/)**:
-  1. [01. Executive Summary & Vision](file:///home/nayem/Personal/SRS/SRS_Doc/docs/01_Executive_Summary_and_Vision.md)
-  2. [02. Feasibility & Market Analysis](file:///home/nayem/Personal/SRS/SRS_Doc/docs/02_Feasibility_and_Market_Analysis.md)
-  3. [03. Requirements Specification (FRs & NFRs)](file:///home/nayem/Personal/SRS/SRS_Doc/docs/03_Software_Requirements_Specification.md)
-  4. [04. System Architecture & 12 UML Diagrams](file:///home/nayem/Personal/SRS/SRS_Doc/docs/04_System_Architecture_and_UML.md)
-  5. [05. UI/UX Design System & Principles](file:///home/nayem/Personal/SRS/SRS_Doc/docs/05_UI_UX_Design_System.md)
-  6. [06. Tech Stack & Implementation Roadmap](file:///home/nayem/Personal/SRS/SRS_Doc/docs/06_Tech_Stack_and_Deployment_Roadmap.md)
+- 🌐 **[Live Web Reader App](https://nsarkar-xlr8.github.io/SRS_Doc/)**: Interactive web app with embedded PDF reader, Lenis smooth scrolling, GSAP animations, and Mermaid diagram swapper.
+- 🧭 **[Master Navigation Index (Live Page)](https://nsarkar-xlr8.github.io/SRS_Doc/INDEX.html)**: Detailed chapter breakdown of the complete 63-page SRS specification.
+- 🎯 **[Recruiter & Career Showcase Guide (Live Page)](https://nsarkar-xlr8.github.io/SRS_Doc/CAREER_SHOWCASE_GUIDE.html)**: Resume bullet points, interview talking points, and LinkedIn templates.
+- 📁 **[Structured Technical Documentation Suite](https://nsarkar-xlr8.github.io/SRS_Doc/INDEX.html)**:
+  1. [01. Executive Summary & Vision](https://nsarkar-xlr8.github.io/SRS_Doc/docs/01_Executive_Summary_and_Vision.html)
+  2. [02. Feasibility & Market Analysis](https://nsarkar-xlr8.github.io/SRS_Doc/docs/02_Feasibility_and_Market_Analysis.html)
+  3. [03. Requirements Specification (FRs & NFRs)](https://nsarkar-xlr8.github.io/SRS_Doc/docs/03_Software_Requirements_Specification.html)
+  4. [04. System Architecture & 12 UML Diagrams (Live Mermaid)](https://nsarkar-xlr8.github.io/SRS_Doc/docs/04_System_Architecture_and_UML.html)
+  5. [05. UI/UX Design System & Principles](https://nsarkar-xlr8.github.io/SRS_Doc/docs/05_UI_UX_Design_System.html)
+  6. [06. Tech Stack & Implementation Roadmap](https://nsarkar-xlr8.github.io/SRS_Doc/docs/06_Tech_Stack_and_Deployment_Roadmap.html)
 
 ---
 
@@ -133,7 +133,7 @@ The platform includes a rigorous **5-Year Economic Feasibility Study** detailing
 
 ## 📐 12 Interactive UML 2.5 Architecture Specifications
 
-The full specification includes 12 comprehensive UML 2.5 diagrams recreated in native GitHub Mermaid markdown format ([View Full Diagrams in docs/04](file:///home/nayem/Personal/SRS/SRS_Doc/docs/04_System_Architecture_and_UML.md)):
+The full specification includes 12 comprehensive UML 2.5 diagrams recreated in live rendering HTML format ([View Live Diagrams in Chapter 4](https://nsarkar-xlr8.github.io/SRS_Doc/docs/04_System_Architecture_and_UML.html)):
 
 ```
 1. Context Diagram (System Boundaries & External Actors)

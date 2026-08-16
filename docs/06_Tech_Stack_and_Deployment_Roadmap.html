@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 06: Tech Stack & Roadmap - TeleVitality SRS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="healthcare-theme">
+
+  <header class="main-header sticky-header">
+    <div class="container flex-between">
+      <div class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="logo-text">
+          <h1>TeleVitality</h1>
+          <span class="sub-logo">Chapter 06: Tech Stack & Schedule</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="../index.html" class="btn btn-outline"><i class="fa-solid fa-house"></i> Main App</a>
+        <a href="../INDEX.html" class="btn btn-outline"><i class="fa-solid fa-compass"></i> Master Index</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container container">
+    <div class="content-card">
+      <div class="card-header flex-between">
+        <div class="card-title">
+          <i class="fa-solid fa-rocket text-emerald"></i>
+          <h2>Chapter 06: Tech Stack & Implementation Roadmap</h2>
+          <span class="badge-tag">SRS_Doc.pdf Pages 52-60</span>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="margin-top-16">
+        <h3 class="card-title-lg"><i class="fa-solid fa-layer-group text-emerald"></i> Full-Stack System Technologies</h3>
+        <div class="grid-3 gap-16 margin-top-12">
+          <div class="insight-box" style="text-align: left;">
+            <h4 class="text-emerald">Frontend Tier</h4>
+            <p style="font-size: 13px; margin-top: 4px;">React.js, Next.js, Redux Toolkit, React Router, Axios, Bootstrap, WebRTC media player.</p>
+          </div>
+          <div class="insight-box" style="text-align: left;">
+            <h4 class="text-emerald">Backend Tier</h4>
+            <p style="font-size: 13px; margin-top: 4px;">Node.js runtime, Express.js REST APIs, JWT authentication, Mongoose ODM schemas.</p>
+          </div>
+          <div class="insight-box" style="text-align: left;">
+            <h4 class="text-emerald">Cloud & Database</h4>
+            <p style="font-size: 13px; margin-top: 4px;">MongoDB Atlas cloud cluster, AWS S3 storage, Vercel CDN, GitHub Actions CI/CD.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gantt Roadmap Box -->
+      <div class="margin-top-24 text-center pitch-box">
+        <h3><i class="fa-solid fa-gantt-chart text-emerald"></i> 7-Stage Rollout Schedule (10 - 20 Weeks)</h3>
+        <p>Phases: 1. Setup & Architecture | 2. Frontend React | 3. Backend Express/APIs | 4. Database Setup | 5. Integration Testing | 6. Cloud Deployment | 7. Maintenance</p>
+        <a href="https://app.ganttpro.com/shared/token/94ef6e4c0e712696077e3ed40f25763e0acc3645cc847ebb1a580e5ca843762d/1430582" target="_blank" class="btn btn-emerald-primary margin-top-16">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open GanttPRO Live Dashboard
+        </a>
+      </div>
+
+      <div class="margin-top-24 flex-between">
+        <a href="05_UI_UX_Design_System.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Chapter 5: UI/UX System</a>
+        <a href="../INDEX.html" class="btn btn-emerald-primary">Return to Master Index <i class="fa-solid fa-compass"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container flex-between">
+      <p><strong>TeleVitality Chapter 06</strong> &copy; 2026</p>
+      <div class="footer-links">
+        <a href="../index.html">Main App</a>
+        <a href="../INDEX.html">Master Index</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

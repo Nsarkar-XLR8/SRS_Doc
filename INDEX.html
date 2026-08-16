@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master Navigation Index - TeleVitality SRS Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="healthcare-theme">
+
+  <!-- Header -->
+  <header class="main-header sticky-header">
+    <div class="container flex-between">
+      <div class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="logo-text">
+          <h1>TeleVitality</h1>
+          <span class="sub-logo">Master Document Index</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-outline"><i class="fa-solid fa-house"></i> Main App</a>
+        <a href="SRS_Doc.pdf" download class="btn btn-emerald-primary"><i class="fa-solid fa-download"></i> Download PDF</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container container">
+    <div class="content-card">
+      <div class="card-header flex-between">
+        <div class="card-title">
+          <i class="fa-solid fa-compass text-emerald"></i>
+          <h2>TeleVitality Master Navigation Index</h2>
+          <span class="badge-tag">SRS_Doc.pdf Summary</span>
+        </div>
+      </div>
+
+      <p class="margin-top-12 text-muted">
+        This document provides an executive index of the 63-page <strong>TeleVitality Software Requirements Specification (SRS)</strong> document authored at UIU by Group 1.
+      </p>
+
+      <!-- Chapter Grid -->
+      <div class="grid-2 gap-24 margin-top-24">
+        
+        <div class="ux-rule-item">
+          <h4><i class="fa-solid fa-file-lines text-emerald"></i> Chapter 01: Vision & Objectives</h4>
+          <p>System background, problem statement, OKR objectives, and stakeholder roles.</p>
+          <a href="docs/01_Executive_Summary_and_Vision.html" class="btn btn-outline margin-top-12"><i class="fa-solid fa-arrow-right"></i> Open Chapter 1</a>
+        </div>
+
+        <div class="ux-rule-item">
+          <h4><i class="fa-solid fa-calculator text-emerald"></i> Chapter 02: Feasibility & Financials</h4>
+          <p>7 feasibility dimensions, 5-year cash flow table ($200k CapEx, $75.7k annual OCF), survey stats, SWOT & GAP analysis.</p>
+          <a href="docs/02_Feasibility_and_Market_Analysis.html" class="btn btn-outline margin-top-12"><i class="fa-solid fa-arrow-right"></i> Open Chapter 2</a>
+        </div>
+
+        <div class="ux-rule-item">
+          <h4><i class="fa-solid fa-list-check text-emerald"></i> Chapter 03: Requirements (FRs & NFRs)</h4>
+          <p>Functional specifications (FR01-09) and Non-Functional Quality Attributes (NFR01-07).</p>
+          <a href="docs/03_Software_Requirements_Specification.html" class="btn btn-outline margin-top-12"><i class="fa-solid fa-arrow-right"></i> Open Chapter 3</a>
+        </div>
+
+        <div class="ux-rule-item">
+          <h4><i class="fa-solid fa-diagram-project text-emerald"></i> Chapter 04: 12 Live UML Diagrams</h4>
+          <p>Context, DFD L1, State, Class, Sequence, ERD, Activity, Swimlane, Deployment diagrams rendered live with Mermaid.js.</p>
+          <a href="docs/04_System_Architecture_and_UML.html" class="btn btn-outline margin-top-12"><i class="fa-solid fa-arrow-right"></i> Open Chapter 4</a>
+        </div>
+
+        <div class="ux-rule-item">
+          <h4><i class="fa-solid fa-palette text-emerald"></i> Chapter 05: UI/UX Design System</h4>
+          <p>Theo Mandel's 3 Golden Rules, Shneiderman's 8 Rules, Norman's Principles, and Figma wireframes gallery.</p>
+          <a href="docs/05_UI_UX_Design_System.html" class="btn btn-outline margin-top-12"><i class="fa-solid fa-arrow-right"></i> Open Chapter 5</a>
+        </div>
+
+        <div class="ux-rule-item">
+          <h4><i class="fa-solid fa-rocket text-emerald"></i> Chapter 06: Tech Stack & Roadmap</h4>
+          <p>MERN/Next.js architecture specs, cloud infrastructure, and 7-stage GanttPRO schedule (10-20 weeks).</p>
+          <a href="docs/06_Tech_Stack_and_Deployment_Roadmap.html" class="btn btn-outline margin-top-12"><i class="fa-solid fa-arrow-right"></i> Open Chapter 6</a>
+        </div>
+
+      </div>
+
+      <!-- Recruiter Pitch Card -->
+      <div class="pitch-box margin-top-24">
+        <h3><i class="fa-solid fa-briefcase text-emerald"></i> Recruiter & Career Showcase Strategy</h3>
+        <p>Looking to showcase this project on your Resume or LinkedIn? Read our custom career positioning guide:</p>
+        <a href="CAREER_SHOWCASE_GUIDE.html" class="btn btn-emerald-primary margin-top-12"><i class="fa-solid fa-user-tie"></i> Open Career Showcase Guide</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container flex-between">
+      <p><strong>TeleVitality SRS Master Index</strong> &copy; 2026</p>
+      <div class="footer-links">
+        <a href="index.html">Main Web App</a>
+        <a href="SRS_Doc.pdf" download>Download PDF</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

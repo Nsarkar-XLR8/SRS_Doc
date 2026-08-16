@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 03: Requirements Specification - TeleVitality SRS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="healthcare-theme">
+
+  <header class="main-header sticky-header">
+    <div class="container flex-between">
+      <div class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="logo-text">
+          <h1>TeleVitality</h1>
+          <span class="sub-logo">Chapter 03: Requirements Specs</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="../index.html" class="btn btn-outline"><i class="fa-solid fa-house"></i> Main App</a>
+        <a href="../INDEX.html" class="btn btn-outline"><i class="fa-solid fa-compass"></i> Master Index</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container container">
+    <div class="content-card">
+      <div class="card-header flex-between">
+        <div class="card-title">
+          <i class="fa-solid fa-list-check text-emerald"></i>
+          <h2>Chapter 03: Functional & Non-Functional Requirements</h2>
+          <span class="badge-tag">SRS_Doc.pdf Pages 26-29</span>
+        </div>
+      </div>
+
+      <!-- FR vs NFR Table -->
+      <div class="margin-top-16">
+        <h3 class="card-title-lg"><i class="fa-solid fa-sliders text-emerald"></i> System Requirements Matrix</h3>
+        <table class="styled-table margin-top-12">
+          <thead>
+            <tr>
+              <th>Feature Subsystem</th>
+              <th>Functional Benchmark (FR)</th>
+              <th>Non-Functional SLA (NFR)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Virtual Consultations</strong></td><td>Response time &lt; 3s; support min. 100 concurrent sessions</td><td>Latency &lt; 2s; 500 max peak sessions</td></tr>
+            <tr><td><strong>Secure Messaging</strong></td><td>End-to-end encryption (E2EE); delivery &lt; 1s</td><td>AES-256 / TLS 1.3 Encryption standards</td></tr>
+            <tr><td><strong>Digital Health Records</strong></td><td>EHR retrieval &lt; 2s; error rate &lt; 0.1%</td><td>Strict data integrity & audit logging</td></tr>
+            <tr><td><strong>Remote Vitals Monitoring</strong></td><td>Real-time sensor/vitals data streaming</td><td>IoT device cross-compatibility</td></tr>
+            <tr><td><strong>Appointment Scheduling</strong></td><td>Booking confirmation &lt; 1 minute</td><td>Digital calendar synchronization</td></tr>
+            <tr><td><strong>E-Prescriptions</strong></td><td>99% accuracy rate in drug matching</td><td>Pharmacy ERP API integration</td></tr>
+            <tr><td><strong>Insurance Verification</strong></td><td>Real-time coverage verification</td><td>Automated claim processing within 48h</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="margin-top-24 flex-between">
+        <a href="02_Feasibility_and_Market_Analysis.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Chapter 2: Feasibility</a>
+        <a href="04_System_Architecture_and_UML.html" class="btn btn-emerald-primary">Chapter 4: 12 UML Diagrams <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container flex-between">
+      <p><strong>TeleVitality Chapter 03</strong> &copy; 2026</p>
+      <div class="footer-links">
+        <a href="../index.html">Main App</a>
+        <a href="../INDEX.html">Master Index</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

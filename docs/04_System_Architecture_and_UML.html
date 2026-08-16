@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Architecture & 12 UML Diagrams - TeleVitality SRS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="healthcare-theme">
+
+  <header class="main-header sticky-header">
+    <div class="container flex-between">
+      <div class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="logo-text">
+          <h1>TeleVitality</h1>
+          <span class="sub-logo">Chapter 04: UML Specifications</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="../index.html" class="btn btn-outline"><i class="fa-solid fa-house"></i> Main App</a>
+        <a href="../INDEX.html" class="btn btn-outline"><i class="fa-solid fa-compass"></i> Master Index</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container container">
+    <div class="content-card">
+      <div class="card-header flex-between">
+        <div class="card-title">
+          <i class="fa-solid fa-diagram-project text-emerald"></i>
+          <h2>Chapter 04: System Architecture & 12 UML Diagrams</h2>
+          <span class="badge-tag">UML 2.5 Standard</span>
+        </div>
+      </div>
+
+      <p class="text-muted">
+        This document provides the complete Unified Modeling Language (UML 2.5) specifications for the TeleVitality Healthcare ERP platform, rendered live with <strong>Mermaid.js</strong>.
+      </p>
+
+      <!-- 1. Context Diagram -->
+      <div class="margin-top-24">
+        <h3 class="card-title-lg"><i class="fa-solid fa-circle-nodes text-emerald"></i> 1. Context Diagram (Level 0 Overview)</h3>
+        <div class="mermaid-box margin-top-12">
+          <div class="mermaid">
+            graph TD
+            System((TeleVitality Telemedicine Service System))
+            User[Patient / User] -->|Video Consultation / Vitals Data| System
+            System -->|Electronic Prescriptions / Health Status| User
+            Doctor[Doctor / Medical Specialist] -->|Consultation Feedback & E-Prescriptions| System
+            System -->|Patient Records & Appointments| Doctor
+            Insurance[Insurance Provider] -->|Coverage Eligibility & Approval| System
+            System -->|Claims Submission & Verification| Insurance
+            Pharmacy[Pharmacy Network] -->|Medication Availability| System
+            System -->|Electronically Generated Prescriptions| Pharmacy
+            Admin[System Administrator] -->|Platform Supervision & User Management| System
+            System -->|System Logs & Audit Reports| Admin
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Data Flow Diagram Level 1 -->
+      <div class="margin-top-24">
+        <h3 class="card-title-lg"><i class="fa-solid fa-arrows-split-up-and-left text-emerald"></i> 2. Data Flow Diagram (DFD Level 1)</h3>
+        <div class="mermaid-box margin-top-12">
+          <div class="mermaid">
+            graph TD
+            Patient[Patient] -->|Auth Credentials| P1[1.0 User Authentication]
+            P1 -->|Store User Details| D1[(D1: Patient Data)]
+            Patient -->|Book Slot| P2[2.0 Appointment Management]
+            P2 -->|Save Booking| D2[(D2: Appointment Records)]
+            Doctor[Doctor] -->|Set Availability| P2
+            Doctor -->|Accept Session| P3[3.0 Doctor Assignment]
+            P3 -->|Query Doctor Profile| D3[(D3: Doctor Data)]
+            Doctor -->|Issue Prescription| P4[4.0 E-Prescription & Reports]
+            P4 -->|Save Prescription| D4[(D4: Health Records)]
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Domain Class Diagram -->
+      <div class="margin-top-24">
+        <h3 class="card-title-lg"><i class="fa-solid fa-sitemap text-emerald"></i> 3. Domain Class Diagram</h3>
+        <div class="mermaid-box margin-top-12">
+          <div class="mermaid">
+            classDiagram
+            class User {
+              +String id
+              +String name
+              +String contact
+              +verifyLogin(): Boolean
+              +login(): Void
+              +register(): Void
+            }
+            class DoctorAppointments {
+              +String id
+              +String name
+              +patientInformation()
+              +dateTime()
+            }
+            class MedicineStore {
+              +String id
+              +verifyPrescription(): Boolean
+              +addMedicine(): Void
+            }
+            class Report {
+              +String id
+              +deliveryDate: Date
+              +reportArrivalCheck(): Boolean
+            }
+            User --> DoctorAppointments : Schedules
+            User --> MedicineStore : Orders
+            User --> Report : Accesses
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Sequence Diagram -->
+      <div class="margin-top-24">
+        <h3 class="card-title-lg"><i class="fa-solid fa-timeline text-emerald"></i> 4. Sequence Diagram (E-Consultation Protocol)</h3>
+        <div class="mermaid-box margin-top-12">
+          <div class="mermaid">
+            sequenceDiagram
+            autonumber
+            actor Patient
+            participant Portal as Web Portal
+            actor Doctor
+            actor Provider as Healthcare Provider
+
+            Patient->>Portal: Log in to platform
+            Patient->>Portal: Select E-Consultation & details
+            Portal->>Doctor: Notify consultation request
+            Doctor-->>Portal: Confirm availability & fee
+            Portal->>Patient: Prompt payment
+            Patient->>Portal: Submit payment
+            Portal->>Doctor: Notify payment received
+
+            Note over Patient,Doctor: Consultation Session
+            Patient->>Portal: Join video call
+            Doctor->>Portal: Conduct E-Consultation & issue E-Prescription
+            Portal->>Provider: Save prescription & receipt
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Entity Relationship Diagram -->
+      <div class="margin-top-24">
+        <h3 class="card-title-lg"><i class="fa-solid fa-database text-emerald"></i> 5. Entity Relationship Diagram (ERD)</h3>
+        <div class="mermaid-box margin-top-12">
+          <div class="mermaid">
+            erDiagram
+            USER ||--o{ DOCTOR : "search / view"
+            ADMIN ||--o{ USER : "remove"
+            ADMIN ||--o{ DOCTOR : "update"
+            DOCTOR ||--o{ PATIENT : "prescribe"
+            PATIENT ||--o{ DOCTOR : "appointment"
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Client Server Deployment Diagram -->
+      <div class="margin-top-24">
+        <h3 class="card-title-lg"><i class="fa-solid fa-server text-emerald"></i> 6. Client-Server Deployment Diagram</h3>
+        <div class="mermaid-box margin-top-12">
+          <div class="mermaid">
+            graph TD
+            subgraph Client Tier
+              Client[Patient / Doctor Browser & Mobile App]
+            end
+            subgraph Server Infrastructure
+              subgraph Caching Layer
+                Cache[Processor: Caching Server - HTTPS / login.exe]
+              end
+              subgraph Database Tier
+                AppServer[Processor: Database Server - dbadmin.exe]
+                DB[(MongoDB Atlas Cluster)]
+              end
+            end
+            Client <-->|HTTPS / WSS| Cache
+            Cache <-->|Internal Network| AppServer
+            AppServer <-->|TLS Encryption| DB
+          </div>
+        </div>
+      </div>
+
+      <div class="margin-top-24 flex-between">
+        <a href="03_Software_Requirements_Specification.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Chapter 3: Requirements</a>
+        <a href="05_UI_UX_Design_System.html" class="btn btn-emerald-primary">Chapter 5: UI/UX System <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container flex-between">
+      <p><strong>TeleVitality Chapter 04: System Architecture & UML</strong> &copy; 2026</p>
+      <div class="footer-links">
+        <a href="../index.html">Main App</a>
+        <a href="../INDEX.html">Master Index</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

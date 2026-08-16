@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter 05: UI/UX Design System - TeleVitality SRS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="healthcare-theme">
+
+  <header class="main-header sticky-header">
+    <div class="container flex-between">
+      <div class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="logo-text">
+          <h1>TeleVitality</h1>
+          <span class="sub-logo">Chapter 05: UI/UX System</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a href="../index.html" class="btn btn-outline"><i class="fa-solid fa-house"></i> Main App</a>
+        <a href="../INDEX.html" class="btn btn-outline"><i class="fa-solid fa-compass"></i> Master Index</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container container">
+    <div class="content-card">
+      <div class="card-header flex-between">
+        <div class="card-title">
+          <i class="fa-solid fa-palette text-emerald"></i>
+          <h2>Chapter 05: UI/UX Design System & Principles</h2>
+          <span class="badge-tag">SRS_Doc.pdf Pages 42-51</span>
+        </div>
+      </div>
+
+      <!-- UI Rules -->
+      <div class="grid-2 gap-24 margin-top-16">
+        <div class="ux-rule-item">
+          <h4>Mandel's 3 Golden Rules</h4>
+          <p>Place users in control through modeless navigation, reduce memory load via visual recognition over recall, and enforce uniform interface consistency.</p>
+        </div>
+        <div class="ux-rule-item">
+          <h4>Shneiderman's 8 Golden Rules</h4>
+          <p>Informative toast feedback, multi-step closure, inline error prevention, and simple action reversal ("Undo/Back").</p>
+        </div>
+      </div>
+
+      <!-- Figma Box -->
+      <div class="figma-preview-box text-center margin-top-24">
+        <i class="fa-brands fa-figma figma-icon"></i>
+        <h3>Interactive Figma Wireframe Workspace</h3>
+        <p>Explore high-fidelity mockups for Landing Page, OTP Login, Doctor Search Directory, EMR Dashboard, and Insurance Form.</p>
+        <a href="https://www.figma.com/file/Hn4UH9sctX308WHB5w9d0O/TeleVitality?type=design&node-id=0%3A1&mode=design&t=jwfXgcdlECXVicNg-1" target="_blank" class="btn btn-emerald-primary margin-top-16">
+          <i class="fa-brands fa-figma"></i> Open Figma Workspace
+        </a>
+      </div>
+
+      <div class="margin-top-24 flex-between">
+        <a href="04_System_Architecture_and_UML.html" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Chapter 4: 12 UML Diagrams</a>
+        <a href="06_Tech_Stack_and_Deployment_Roadmap.html" class="btn btn-emerald-primary">Chapter 6: Tech Stack & Roadmap <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container flex-between">
+      <p><strong>TeleVitality Chapter 05</strong> &copy; 2026</p>
+      <div class="footer-links">
+        <a href="../index.html">Main App</a>
+        <a href="../INDEX.html">Master Index</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>
