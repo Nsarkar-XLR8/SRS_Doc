@@ -1,5 +1,5 @@
 /* ==========================================================================
-   TeleVitality - Ultra-Premium Healthcare Emerald & White Design System
+   TeleVitality - High-Performance Healthcare Emerald & White Design System
    ========================================================================== */
 
 :root {
@@ -12,7 +12,7 @@
   --emerald-border: #a7f3d0;
 
   --accent-teal: #0d9488;
-  --mint-glow: rgba(16, 185, 129, 0.2);
+  --mint-glow: rgba(16, 185, 129, 0.15);
 
   --text-dark: #0f172a;
   --text-main: #1e293b;
@@ -22,8 +22,8 @@
   --bg-card: #ffffff;
 
   --shadow-sm: 0 4px 12px rgba(5, 150, 105, 0.04);
-  --shadow-md: 0 12px 36px rgba(5, 150, 105, 0.08);
-  --shadow-lg: 0 24px 50px rgba(5, 150, 105, 0.14);
+  --shadow-md: 0 10px 30px rgba(5, 150, 105, 0.07);
+  --shadow-lg: 0 20px 40px rgba(5, 150, 105, 0.12);
 
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -52,7 +52,7 @@ html.lenis, html.lenis body {
 
 /* Custom Healthcare Emerald Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: var(--primary-emerald);
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -156,7 +156,6 @@ a:hover {
   background: rgba(255, 255, 255, 0.18);
   padding: 4px 12px;
   border-radius: 20px;
-  backdrop-filter: blur(4px);
   transition: all 0.2s ease;
 }
 
@@ -164,21 +163,19 @@ a:hover {
   opacity: 1;
   background: rgba(255, 255, 255, 0.3);
   color: #ffffff;
-  transform: translateY(-1px);
 }
 
-/* Sticky Header */
+/* Crisp Hardware-Accelerated Sticky Header (No Heavy Blur Filter) */
 .main-header {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #ffffff;
   border-bottom: 1px solid var(--emerald-border);
-  padding: 16px 0;
+  padding: 14px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(5, 150, 105, 0.06);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .brand-logo {
@@ -188,16 +185,16 @@ a:hover {
 }
 
 .logo-icon {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   background: linear-gradient(135deg, var(--primary-emerald), var(--emerald-light));
   color: #ffffff;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
-  box-shadow: 0 4px 14px var(--mint-glow);
+  font-size: 20px;
+  box-shadow: 0 4px 12px var(--mint-glow);
 }
 
 .logo-text h1 {
@@ -219,7 +216,7 @@ a:hover {
   display: flex;
   gap: 6px;
   background: var(--emerald-bg);
-  padding: 6px;
+  padding: 5px;
   border-radius: 30px;
   border: 1px solid var(--emerald-border);
 }
@@ -227,14 +224,14 @@ a:hover {
 .nav-tab {
   background: transparent;
   border: none;
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-radius: 20px;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -248,7 +245,7 @@ a:hover {
 .nav-tab.active {
   background: var(--primary-emerald);
   color: #ffffff;
-  box-shadow: 0 4px 14px var(--mint-glow);
+  box-shadow: 0 4px 12px var(--mint-glow);
 }
 
 /* Buttons */
@@ -256,13 +253,13 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 9px 18px;
   border-radius: 20px;
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   border: none;
 }
 
@@ -275,7 +272,6 @@ a:hover {
 .btn-outline:hover {
   background: var(--emerald-bg);
   border-color: var(--primary-emerald);
-  transform: translateY(-2px);
 }
 
 .btn-emerald-primary {
@@ -285,8 +281,8 @@ a:hover {
 }
 
 .btn-emerald-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px var(--mint-glow);
+  background: var(--primary-emerald-hover);
+  box-shadow: 0 6px 16px var(--mint-glow);
 }
 
 .btn-emerald-icon {
@@ -304,11 +300,10 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-  padding: 48px 0 36px;
+  padding: 44px 0 32px;
   background: linear-gradient(180deg, #ffffff 0%, var(--emerald-bg) 100%);
   border-bottom: 1px solid var(--emerald-border);
   position: relative;
-  overflow: hidden;
 }
 
 .hero-badge {
@@ -322,13 +317,13 @@ a:hover {
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .hero-title {
-  font-size: 42px;
-  margin-bottom: 14px;
-  letter-spacing: -0.8px;
+  font-size: 40px;
+  margin-bottom: 12px;
+  letter-spacing: -0.6px;
   line-height: 1.15;
 }
 
@@ -336,33 +331,39 @@ a:hover {
   font-size: 16px;
   color: var(--text-muted);
   max-width: 820px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .hero-stats {
-  gap: 18px;
+  gap: 16px;
+}
+
+/* GPU Hardware Layer Promotion for Cards */
+.stat-card, .content-card, .pdf-reader-card, .pdf-viewport-wrapper {
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style;
 }
 
 .stat-card {
   background: var(--bg-card);
   border: 1px solid var(--emerald-border);
-  padding: 22px 18px;
+  padding: 20px 16px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: transform;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: var(--emerald-light);
 }
 
 .stat-number {
   font-family: var(--font-heading);
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 800;
   color: var(--primary-emerald);
   line-height: 1.1;
@@ -377,13 +378,13 @@ a:hover {
 
 /* Main Container & Tabs */
 .main-container {
-  padding: 40px 24px 70px;
+  padding: 36px 24px 60px;
 }
 
 .tab-content {
   display: none;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
 .tab-content.active {
@@ -396,19 +397,14 @@ a:hover {
   background: var(--bg-card);
   border: 1px solid var(--emerald-border);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 28px;
   box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-  will-change: transform, opacity;
-}
-
-.content-card:hover, .pdf-reader-card:hover {
-  box-shadow: var(--shadow-lg);
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .card-header {
-  margin-bottom: 22px;
-  padding-bottom: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--emerald-border);
 }
 
@@ -422,7 +418,7 @@ a:hover {
 .card-title-lg {
   font-size: 20px;
   font-family: var(--font-heading);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -457,7 +453,7 @@ a:hover {
   background: var(--emerald-bg);
   border: 1px solid var(--emerald-border);
   color: var(--primary-emerald);
-  padding: 6px 12px;
+  padding: 5px 11px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
@@ -468,50 +464,45 @@ a:hover {
 .btn-jump:hover {
   background: var(--primary-emerald);
   color: #ffffff;
-  transform: translateY(-1px);
 }
 
-/* PDF Viewport & Pass-Through Scroll Protection */
+/* PDF Viewport Container & Zero-Jank Pass-Through */
 .pdf-viewport-wrapper {
   position: relative;
   border: 1px solid var(--emerald-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: #f1f5f9;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.03);
 }
 
-/* Default State: Pointer Events OFF so page scrolling NEVER gets stuck */
 .pdf-viewport-wrapper iframe {
   border: none;
   display: block;
   pointer-events: none;
-  transition: pointer-events 0.2s ease;
+  transition: pointer-events 0.15s ease;
 }
 
-/* Interactive State when user explicitly clicks */
 .pdf-viewport-wrapper.interactive iframe {
   pointer-events: auto;
 }
 
-/* Floating Interactive Overlay Badge */
 .pdf-interactive-overlay {
   position: absolute;
-  top: 16px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  background: rgba(5, 150, 105, 0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(5, 150, 105, 0.95);
   color: #ffffff;
   padding: 8px 18px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -519,8 +510,7 @@ a:hover {
 
 .pdf-interactive-overlay:hover {
   background: var(--primary-emerald-hover);
-  transform: translateX(-50%) translateY(-2px);
-  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+  transform: translateX(-50%) translateY(-1px);
 }
 
 .pdf-viewport-wrapper.interactive .pdf-interactive-overlay {
@@ -529,7 +519,7 @@ a:hover {
 }
 
 .pdf-fallback {
-  padding: 14px;
+  padding: 12px;
   background: var(--emerald-bg);
   font-size: 13px;
   text-align: center;
@@ -541,7 +531,7 @@ a:hover {
 .styled-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 14px;
 }
 
@@ -551,12 +541,12 @@ a:hover {
   font-family: var(--font-heading);
   font-weight: 700;
   text-align: left;
-  padding: 14px;
+  padding: 12px;
   border-bottom: 2px solid var(--emerald-border);
 }
 
 .styled-table td {
-  padding: 14px;
+  padding: 12px;
   border-bottom: 1px solid #f1f5f9;
 }
 
@@ -565,19 +555,18 @@ a:hover {
   background: var(--emerald-bg);
   border: 1px solid var(--emerald-border);
   border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 20px;
   text-align: center;
-  transition: transform 0.25s ease;
+  transition: transform 0.2s ease;
 }
 
 .insight-box:hover {
-  transform: translateY(-4px);
-  border-color: var(--emerald-light);
+  transform: translateY(-3px);
 }
 
 .insight-percent {
   font-family: var(--font-heading);
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 800;
   color: var(--primary-emerald);
 }
@@ -585,7 +574,7 @@ a:hover {
 .insight-desc {
   font-size: 13px;
   color: var(--text-main);
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 /* Feature List */
@@ -594,10 +583,10 @@ a:hover {
 }
 
 .feature-list li {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
   font-size: 14px;
 }
 
@@ -611,7 +600,7 @@ a:hover {
 .uml-btn {
   background: var(--bg-body);
   border: 1px solid var(--emerald-border);
-  padding: 6px 14px;
+  padding: 6px 12px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
@@ -629,34 +618,32 @@ a:hover {
   background: #ffffff;
   border: 1px solid var(--emerald-border);
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 24px;
   overflow-x: auto;
   text-align: center;
-  min-height: 420px;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.02);
 }
 
 /* UI Rules & Pitch */
 .ux-rule-item, .pitch-box {
   background: var(--emerald-bg);
   border: 1px solid var(--emerald-border);
-  padding: 20px;
+  padding: 18px;
   border-radius: var(--radius-md);
-  margin-bottom: 18px;
-  transition: transform 0.25s ease;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease;
 }
 
 .ux-rule-item:hover, .pitch-box:hover {
   transform: translateY(-2px);
-  border-color: var(--emerald-light);
 }
 
 .ux-rule-item h4, .pitch-box h3 {
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: var(--primary-emerald);
 }
 
@@ -674,20 +661,20 @@ a:hover {
   background: var(--emerald-bg);
   border: 2px dashed var(--emerald-border);
   border-radius: var(--radius-md);
-  padding: 44px 24px;
+  padding: 40px 20px;
 }
 
 .figma-icon {
-  font-size: 52px;
+  font-size: 48px;
   color: var(--primary-emerald);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 /* Doc Links */
 .doc-link-card {
   background: #ffffff;
   border: 1px solid var(--emerald-border);
-  padding: 14px;
+  padding: 12px;
   border-radius: var(--radius-sm);
   color: var(--text-dark);
   font-weight: 600;
@@ -696,27 +683,26 @@ a:hover {
   align-items: center;
   gap: 10px;
   box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .doc-link-card:hover {
   background: var(--emerald-bg);
   color: var(--primary-emerald);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 /* Footer */
 .main-footer {
   background: var(--text-dark);
   color: #ffffff;
-  padding: 28px 0;
+  padding: 24px 0;
   font-size: 13px;
 }
 
 .footer-links a {
   color: var(--emerald-border);
-  margin-left: 18px;
+  margin-left: 16px;
 }
 
 .footer-links a:hover {
@@ -726,6 +712,6 @@ a:hover {
 /* Responsive adjustments */
 @media (max-width: 992px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .main-header .container { flex-direction: column; gap: 14px; }
+  .main-header .container { flex-direction: column; gap: 12px; }
   .nav-links { overflow-x: auto; width: 100%; justify-content: flex-start; }
 }

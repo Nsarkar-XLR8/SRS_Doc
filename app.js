@@ -1,37 +1,29 @@
 /* ==========================================================================
-   TeleVitality - Ultra-Premium Lenis + GSAP ScrollTrigger Interactivity
+   TeleVitality - High-Performance Lenis + GSAP Logic (Zero Scroll Friction)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Register GSAP Plugins & Initialize Lenis Smooth Scroll
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-  }
-
+  // 1. Initialize Lenis Smooth Scroll with Snappy, Responsive Physics
   let lenis = null;
   if (typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.6,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.1,
+      wheelMultiplier: 1.0,
       smoothTouch: false,
-      touchMultiplier: 2,
+      touchMultiplier: 1.5,
       infinite: false,
     });
 
-    if (typeof ScrollTrigger !== 'undefined') {
-      lenis.on('scroll', ScrollTrigger.update);
-
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-
-      gsap.ticker.lagSmoothing(0);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
+    requestAnimationFrame(raf);
   }
 
   // 2. Initialize Mermaid.js
@@ -44,37 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. GSAP Entrance & ScrollTrigger Animations
+  // 3. Fast One-Time Entrance Animations (No Continuous Scroll-Frame Ticks)
   if (typeof gsap !== 'undefined') {
-    // Header & Hero Entrance
-    gsap.from('.main-header', { y: -40, opacity: 0, duration: 0.8, ease: 'power3.out' });
-    gsap.from('.hero-badge', { scale: 0.8, opacity: 0, duration: 0.6, delay: 0.2 });
-    gsap.from('.hero-title', { y: 30, opacity: 0, duration: 0.8, delay: 0.3 });
-    gsap.from('.hero-subtitle', { y: 20, opacity: 0, duration: 0.8, delay: 0.4 });
-    gsap.from('.stat-card', { y: 30, opacity: 0, duration: 0.6, stagger: 0.1, delay: 0.5 });
-
-    // ScrollTrigger Card Animations
-    if (typeof ScrollTrigger !== 'undefined') {
-      gsap.utils.toArray('.content-card, .pdf-reader-card, .insight-box, .ux-rule-item, .pitch-box').forEach((el) => {
-        gsap.fromTo(el, 
-          { y: 35, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: el,
-              start: 'top 88%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-      });
-    }
+    gsap.from('.main-header', { y: -30, opacity: 0, duration: 0.6, ease: 'power2.out' });
+    gsap.from('.hero-badge', { scale: 0.9, opacity: 0, duration: 0.5, delay: 0.1 });
+    gsap.from('.hero-title', { y: 20, opacity: 0, duration: 0.6, delay: 0.2 });
+    gsap.from('.hero-subtitle', { y: 15, opacity: 0, duration: 0.6, delay: 0.3 });
+    gsap.from('.stat-card', { y: 20, opacity: 0, duration: 0.5, stagger: 0.08, delay: 0.4 });
   }
 
-  // 4. Tab Navigation Interactivity with Lenis Reset
+  // 4. Tab Navigation Interactivity
   const navTabs = document.querySelectorAll('.nav-tab');
   const tabContents = document.querySelectorAll('.tab-content');
 
@@ -92,12 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
           content.classList.add('active');
 
           if (typeof gsap !== 'undefined') {
-            gsap.fromTo(content, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
-          }
-
-          // Trigger ScrollTrigger refresh
-          if (typeof ScrollTrigger !== 'undefined') {
-            setTimeout(() => ScrollTrigger.refresh(), 100);
+            gsap.fromTo(content, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' });
           }
         } else {
           content.classList.remove('active');
@@ -140,8 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 7. Smart PDF Scroll Pass-Through & Interactive Unlock
-  const pdfOverlay = document.getElementById('pdfOverlay');
-
   if (pdfWrapper) {
     // Unlock PDF interactivity when user clicks overlay badge or viewport
     pdfWrapper.addEventListener('click', () => {
