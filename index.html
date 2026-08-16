@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TeleVitality - Live Healthcare ERP & Systems Architecture Showcase</title>
+  <meta name="description" content="Live Interactive Systems Architecture & SRS Showcase for TeleVitality Healthcare ERP Platform." />
+  
+  <!-- Google Fonts: Outfit & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Custom Healthcare Green + White Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Mermaid.js for Native UML Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+
+  <!-- GSAP Animation Library & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="healthcare-theme">
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container flex-between">
+      <span><i class="fa-solid fa-hospital-user"></i> <strong>TeleVitality</strong> — Healthcare ERP & Systems Architecture Portfolio</span>
+      <div class="announcement-links">
+        <a href="https://github.com/Nsarkar-XLR8/SRS_Doc" target="_blank" class="badge-link"><i class="fa-brands fa-github"></i> GitHub Repository</a>
+        <a href="SRS_Doc.pdf" download class="badge-link download-btn"><i class="fa-solid fa-download"></i> Download PDF (63 Pages)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="main-header sticky-header">
+    <div class="container flex-between">
+      <div class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="logo-text">
+          <h1>TeleVitality</h1>
+          <span class="sub-logo">Healthcare ERP Architecture</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <button class="nav-tab active" data-tab="tab-pdf"><i class="fa-solid fa-file-pdf"></i> Live PDF Reader</button>
+        <button class="nav-tab" data-tab="tab-overview"><i class="fa-solid fa-chart-pie"></i> Executive & Financials</button>
+        <button class="nav-tab" data-tab="tab-uml"><i class="fa-solid fa-diagram-project"></i> 12 UML Diagrams</button>
+        <button class="nav-tab" data-tab="tab-ux"><i class="fa-solid fa-palette"></i> UI/UX System</button>
+        <button class="nav-tab" data-tab="tab-recruiter"><i class="fa-solid fa-briefcase"></i> Recruiter Highlights</button>
+      </nav>
+
+      <div class="header-actions">
+        <a href="SRS_Doc.pdf" target="_blank" class="btn btn-outline"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Raw PDF</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container grid-hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Enterprise Systems Architecture</div>
+        <h1 class="hero-title">Empowering Health <span class="text-highlight">Beyond Boundaries</span></h1>
+        <p class="hero-subtitle">
+          A comprehensive 63-page Software Requirements Specification (SRS), 12 interactive UML 2.5 architecture models, 5-year financial cash flow modeling, and UI/UX design framework.
+        </p>
+
+        <!-- Metric Badges -->
+        <div class="hero-stats grid-4">
+          <div class="stat-card">
+            <div class="stat-number">63</div>
+            <div class="stat-label">Pages of Specifications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">12</div>
+            <div class="stat-label">Interactive UML Models</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">$75.7K</div>
+            <div class="stat-label">Annual Operating Cash Flow</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Target Availability SLA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="main-container container">
+
+    <!-- TAB 1: LIVE PDF READER -->
+    <section id="tab-pdf" class="tab-content active">
+      <div class="pdf-reader-card">
+        <div class="card-header flex-between">
+          <div class="card-title">
+            <i class="fa-solid fa-book-open-reader text-emerald"></i>
+            <h2>Live Interactive PDF Document Reader</h2>
+            <span class="badge-tag">SRS_Doc.pdf</span>
+          </div>
+
+          <!-- Shortcuts & Viewer Controls -->
+          <div class="pdf-controls">
+            <span class="control-label">Quick Jump:</span>
+            <button class="btn-jump" data-page="1">Cover</button>
+            <button class="btn-jump" data-page="7">Methodology</button>
+            <button class="btn-jump" data-page="11">Cash Flow</button>
+            <button class="btn-jump" data-page="26">Requirements</button>
+            <button class="btn-jump" data-page="33">Class Diagram</button>
+            <button class="btn-jump" data-page="35">Sequence</button>
+            <button class="btn-jump" data-page="45">Figma UI</button>
+
+            <button id="toggleFullscreen" class="btn btn-emerald-icon" title="Toggle Fullscreen"><i class="fa-solid fa-expand"></i></button>
+            <a href="SRS_Doc.pdf" download class="btn btn-emerald-primary"><i class="fa-solid fa-download"></i> Download</a>
+          </div>
+        </div>
+
+        <div class="pdf-viewport-wrapper">
+          <iframe id="pdfFrame" src="SRS_Doc.pdf#toolbar=1&navpanes=1" width="100%" height="800px"></iframe>
+          <div class="pdf-fallback">
+            <p><i class="fa-solid fa-circle-info"></i> Having trouble viewing the PDF frame? <a href="SRS_Doc.pdf" target="_blank" class="link-emerald">Click here to open PDF in a new tab</a> or view the structured markdown chapters in the tabs above.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: EXECUTIVE & FINANCIALS -->
+    <section id="tab-overview" class="tab-content">
+      <div class="grid-2 gap-24">
+        
+        <!-- System Objectives & Problems -->
+        <div class="content-card">
+          <div class="card-title-lg"><i class="fa-solid fa-bullseye text-emerald"></i> Strategic System Objectives</div>
+          <div class="card-body">
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-circle-check text-emerald"></i> <strong>Healthcare Accessibility</strong>: Eliminates geographical barriers for rural and underserved patients.</li>
+              <li><i class="fa-solid fa-circle-check text-emerald"></i> <strong>Preventable Error Elimination</strong>: Enforces 99% accuracy in electronic prescription drug matching.</li>
+              <li><i class="fa-solid fa-circle-check text-emerald"></i> <strong>HIPAA Security & E2EE</strong>: Protects medical data confidentiality with AES-256 encryption.</li>
+              <li><i class="fa-solid fa-circle-check text-emerald"></i> <strong>Real-Time Vital Ingestion</strong>: Streams wearable heart rate, SpO2, and blood pressure vitals directly to doctor dashboards.</li>
+              <li><i class="fa-solid fa-circle-check text-emerald"></i> <strong>48-Hour Claim Processing</strong>: Automated real-time insurance verification and claim tracking.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Financial Model Summary Table -->
+        <div class="content-card">
+          <div class="card-title-lg"><i class="fa-solid fa-calculator text-emerald"></i> 5-Year Cash Flow Model Summary</div>
+          <div class="card-body">
+            <table class="styled-table">
+              <thead>
+                <tr>
+                  <th>Financial Parameter</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Initial Equipment CapEx (Year 0)</td><td><strong>$200,000</strong></td></tr>
+                <tr><td>Net Operating Working Capital</td><td><strong>$78,000</strong></td></tr>
+                <tr><td>Annual Projected Revenue</td><td><strong>$240,000 / year</strong></td></tr>
+                <tr><td>Cost of Goods Sold (60%)</td><td>-$144,000 / year</td></tr>
+                <tr><td>Depreciation (5-Yr Straight-Line)</td><td>-$40,000 / year</td></tr>
+                <tr><td>Net Profit After Taxes (NOPAT)</td><td><strong>$35,700 / year</strong></td></tr>
+                <tr><td><strong>Annual Operating Cash Flow (OCF)</strong></td><td><strong class="text-emerald">+$75,700 / year</strong></td></tr>
+                <tr><td>Free Cash Flow (Year 5 Recovery)</td><td><strong class="text-emerald">+$153,700</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Survey Insights Grid -->
+      <div class="content-card margin-top-24">
+        <div class="card-title-lg"><i class="fa-solid fa-chart-bar text-emerald"></i> Market Survey & User Preference Highlights</div>
+        <div class="grid-3 gap-16 margin-top-16">
+          <div class="insight-box">
+            <div class="insight-percent">70%</div>
+            <div class="insight-desc">Prioritized Video Consultations & Prescription Delivery as most critical features.</div>
+          </div>
+          <div class="insight-box">
+            <div class="insight-percent">90%</div>
+            <div class="insight-desc">Preferred Video calls as primary communication channel for specialist visits.</div>
+          </div>
+          <div class="insight-box">
+            <div class="insight-percent">40%</div>
+            <div class="insight-desc">Rated Data Privacy & EMR Encryption as their primary security priority.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: 12 UML DIAGRAMS -->
+    <section id="tab-uml" class="tab-content">
+      <div class="content-card">
+        <div class="card-header flex-between">
+          <div class="card-title">
+            <i class="fa-solid fa-diagram-project text-emerald"></i>
+            <h2>Complete UML 2.5 Systems Architecture Models</h2>
+          </div>
+          <div class="uml-selector-buttons">
+            <button class="uml-btn active" data-uml="context">Context</button>
+            <button class="uml-btn" data-uml="dfd">DFD L1</button>
+            <button class="uml-btn" data-uml="class">Class</button>
+            <button class="uml-btn" data-uml="sequence">Sequence</button>
+            <button class="uml-btn" data-uml="erd">ERD</button>
+            <button class="uml-btn" data-uml="activity">Activity</button>
+            <button class="uml-btn" data-uml="state">State</button>
+            <button class="uml-btn" data-uml="deployment">Deployment</button>
+          </div>
+        </div>
+
+        <div class="uml-display-area margin-top-16">
+          <div id="uml-container" class="mermaid-box">
+            <!-- Dynamic Mermaid Render Target -->
+            <div class="mermaid" id="mermaid-target">
+              graph TD
+              System((TeleVitality Telemedicine Service System))
+              User[Patient / User] -->|Video Consultation / Vitals| System
+              System -->|Prescriptions / Health Status| User
+              Doctor[Doctor / Specialist] -->|E-Prescriptions| System
+              System -->|Patient Records| Doctor
+              Insurance[Insurance Provider] -->|Eligibility| System
+              System -->|Claims Submission| Insurance
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: UI/UX SYSTEM -->
+    <section id="tab-ux" class="tab-content">
+      <div class="grid-2 gap-24">
+        
+        <!-- UI Rules -->
+        <div class="content-card">
+          <div class="card-title-lg"><i class="fa-solid fa-layer-group text-emerald"></i> UI/UX Design System Rules</div>
+          <div class="card-body">
+            <div class="ux-rule-item">
+              <h4>Mandel's 3 Golden Rules</h4>
+              <p>Place users in control through modeless navigation, reduce memory load via visual recognition over recall, and enforce uniform interface consistency.</p>
+            </div>
+            <div class="ux-rule-item">
+              <h4>Shneiderman's 8 Golden Rules</h4>
+              <p>Informative toast feedback, multi-step closure, inline error prevention, and simple action reversal ("Undo/Back").</p>
+            </div>
+            <div class="ux-rule-item">
+              <h4>Norman's Design Principles</h4>
+              <p>Prominent call-to-action visibility, natural spatial mapping, and affordances designed for healthcare users.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Figma Preview Link -->
+        <div class="content-card">
+          <div class="card-title-lg"><i class="fa-brands fa-figma text-emerald"></i> High-Fidelity Figma Mockups</div>
+          <div class="card-body text-center">
+            <div class="figma-preview-box">
+              <i class="fa-solid fa-laptop-medical figma-icon"></i>
+              <h3>TeleVitality Figma Workspace</h3>
+              <p>Includes high-fidelity screen mockups for Home Portal, Mobile Phone OTP Login, Doctor Consultation Directory, Patient EMR Profile, and Insurance Application.</p>
+              <a href="https://www.figma.com/file/Hn4UH9sctX308WHB5w9d0O/TeleVitality?type=design&node-id=0%3A1&mode=design&t=jwfXgcdlECXVicNg-1" target="_blank" class="btn btn-emerald-primary margin-top-16">
+                <i class="fa-brands fa-figma"></i> Open Figma Workspace
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TAB 5: RECRUITER HIGHLIGHTS -->
+    <section id="tab-recruiter" class="tab-content">
+      <div class="content-card">
+        <div class="card-title-lg"><i class="fa-solid fa-briefcase text-emerald"></i> Architect & SWE Career Highlights</div>
+        <div class="card-body">
+          <div class="recruiter-grid grid-2 gap-24">
+            
+            <div class="pitch-box">
+              <h3><i class="fa-solid fa-user-tie text-emerald"></i> For ERP & Systems Analyst Roles</h3>
+              <ul>
+                <li><strong>Enterprise EMR/EHR Design</strong>: Modeled end-to-end medical records, e-prescriptions, and insurance workflows.</li>
+                <li><strong>Financial Rigor</strong>: Formulated 5-year cash flow models ($200k CapEx, 20% required ROR, $75.7k annual operating cash flow).</li>
+                <li><strong>UML Standard</strong>: Authored 12 UML 2.5 diagrams detailing multi-actor interactions.</li>
+              </ul>
+            </div>
+
+            <div class="pitch-box">
+              <h3><i class="fa-solid fa-code text-emerald"></i> For Full-Stack SWE Roles</h3>
+              <ul>
+                <li><strong>High-Concurrency SLA</strong>: Designed for 100+ simultaneous WebRTC video streams with sub-3s response times.</li>
+                <li><strong>Security & HIPAA</strong>: Defined AES-256 / TLS 1.3 data encryption and RBAC authorization middleware.</li>
+                <li><strong>MERN Architecture</strong>: Full-stack Next.js/React, Node.js, Express, and MongoDB Atlas database sharding.</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Documentation Links Summary -->
+          <div class="doc-links-summary margin-top-24">
+            <h4><i class="fa-solid fa-folder-open text-emerald"></i> Project Documentation Index</h4>
+            <div class="grid-3 gap-12 margin-top-12">
+              <a href="INDEX.html" class="doc-link-card"><i class="fa-solid fa-compass"></i> Master INDEX.md</a>
+              <a href="CAREER_SHOWCASE_GUIDE.md" class="doc-link-card"><i class="fa-solid fa-bullseye"></i> Recruiter Guide</a>
+              <a href="docs/04_System_Architecture_and_UML.md" class="doc-link-card"><i class="fa-solid fa-diagram-project"></i> 12 UML Markdown</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container flex-between">
+      <div class="footer-info">
+        <p><strong>TeleVitality SRS Showcase</strong> &copy; 2026. Authored at UIU (Group 1).</p>
+      </div>
+      <div class="footer-links">
+        <a href="SRS_Doc.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download SRS PDF</a>
+        <a href="https://github.com/Nsarkar-XLR8/SRS_Doc" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
