@@ -1,22 +1,37 @@
 /* ==========================================================================
-   TeleVitality - Live Showcase Interactivity (Lenis + GSAP + Mermaid)
+   TeleVitality - Ultra-Premium Lenis + GSAP ScrollTrigger Interactivity
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Initialize Lenis Smooth Scroll
+  // 1. Register GSAP Plugins & Initialize Lenis Smooth Scroll
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  let lenis = null;
   if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
+    lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 1.1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
     }
-    requestAnimationFrame(raf);
   }
 
   // 2. Initialize Mermaid.js
@@ -29,16 +44,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. GSAP Entrance Animations
+  // 3. GSAP Entrance & ScrollTrigger Animations
   if (typeof gsap !== 'undefined') {
-    gsap.from('.main-header', { y: -50, opacity: 0, duration: 0.8, ease: 'power3.out' });
+    // Header & Hero Entrance
+    gsap.from('.main-header', { y: -40, opacity: 0, duration: 0.8, ease: 'power3.out' });
     gsap.from('.hero-badge', { scale: 0.8, opacity: 0, duration: 0.6, delay: 0.2 });
     gsap.from('.hero-title', { y: 30, opacity: 0, duration: 0.8, delay: 0.3 });
     gsap.from('.hero-subtitle', { y: 20, opacity: 0, duration: 0.8, delay: 0.4 });
     gsap.from('.stat-card', { y: 30, opacity: 0, duration: 0.6, stagger: 0.1, delay: 0.5 });
+
+    // ScrollTrigger Card Animations
+    if (typeof ScrollTrigger !== 'undefined') {
+      gsap.utils.toArray('.content-card, .pdf-reader-card, .insight-box, .ux-rule-item, .pitch-box').forEach((el) => {
+        gsap.fromTo(el, 
+          { y: 35, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 88%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+    }
   }
 
-  // 4. Tab Navigation Interactivity
+  // 4. Tab Navigation Interactivity with Lenis Reset
   const navTabs = document.querySelectorAll('.nav-tab');
   const tabContents = document.querySelectorAll('.tab-content');
 
@@ -54,8 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
       tabContents.forEach(content => {
         if (content.id === targetTabId) {
           content.classList.add('active');
+
           if (typeof gsap !== 'undefined') {
-            gsap.fromTo(content, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.4 });
+            gsap.fromTo(content, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+          }
+
+          // Trigger ScrollTrigger refresh
+          if (typeof ScrollTrigger !== 'undefined') {
+            setTimeout(() => ScrollTrigger.refresh(), 100);
           }
         } else {
           content.classList.remove('active');
