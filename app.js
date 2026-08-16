@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Fullscreen Toggle for PDF Viewport
   const toggleFullscreenBtn = document.getElementById('toggleFullscreen');
-  const pdfWrapper = document.querySelector('.pdf-viewport-wrapper');
+  const pdfWrapper = document.getElementById('pdfWrapper');
 
   if (toggleFullscreenBtn && pdfWrapper) {
     toggleFullscreenBtn.addEventListener('click', () => {
@@ -139,7 +139,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. Interactive Mermaid.js UML Diagram Switcher
+  // 7. Smart PDF Scroll Pass-Through & Interactive Unlock
+  const pdfOverlay = document.getElementById('pdfOverlay');
+
+  if (pdfWrapper) {
+    // Unlock PDF interactivity when user clicks overlay badge or viewport
+    pdfWrapper.addEventListener('click', () => {
+      pdfWrapper.classList.add('interactive');
+    });
+
+    // Automatically re-enable smooth page scroll when cursor leaves PDF viewport
+    pdfWrapper.addEventListener('mouseleave', () => {
+      pdfWrapper.classList.remove('interactive');
+    });
+
+    // Automatically re-enable smooth page scroll on window wheel scroll
+    window.addEventListener('scroll', () => {
+      if (pdfWrapper.classList.contains('interactive')) {
+        pdfWrapper.classList.remove('interactive');
+      }
+    }, { passive: true });
+  }
+
+  // 8. Interactive Mermaid.js UML Diagram Switcher
   const umlButtons = document.querySelectorAll('.uml-btn');
   const mermaidTarget = document.getElementById('mermaid-target');
 

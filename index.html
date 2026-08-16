@@ -127,7 +127,11 @@
           </div>
         </div>
 
-        <div class="pdf-viewport-wrapper">
+        <!-- PDF Viewport Wrapper with Smart Scroll Lock Overlay -->
+        <div class="pdf-viewport-wrapper" id="pdfWrapper">
+          <div class="pdf-interactive-overlay" id="pdfOverlay">
+            <span><i class="fa-solid fa-hand-pointer"></i> Click to scroll & select inside PDF</span>
+          </div>
           <iframe id="pdfFrame" src="SRS_Doc.pdf#toolbar=1&navpanes=1" width="100%" height="800px"></iframe>
           <div class="pdf-fallback">
             <p><i class="fa-solid fa-circle-info"></i> Having trouble viewing the PDF frame? <a href="SRS_Doc.pdf" target="_blank" class="link-emerald">Click here to open PDF in a new tab</a> or view the structured markdown chapters in the tabs above.</p>

@@ -471,19 +471,61 @@ a:hover {
   transform: translateY(-1px);
 }
 
-/* Viewport Frame & Smooth Wheel Handling */
+/* PDF Viewport & Pass-Through Scroll Protection */
 .pdf-viewport-wrapper {
+  position: relative;
   border: 1px solid var(--emerald-border);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: #f1f5f9;
-  position: relative;
   box-shadow: inset 0 2px 8px rgba(0,0,0,0.04);
 }
 
+/* Default State: Pointer Events OFF so page scrolling NEVER gets stuck */
 .pdf-viewport-wrapper iframe {
   border: none;
   display: block;
+  pointer-events: none;
+  transition: pointer-events 0.2s ease;
+}
+
+/* Interactive State when user explicitly clicks */
+.pdf-viewport-wrapper.interactive iframe {
+  pointer-events: auto;
+}
+
+/* Floating Interactive Overlay Badge */
+.pdf-interactive-overlay {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(5, 150, 105, 0.92);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pdf-interactive-overlay:hover {
+  background: var(--primary-emerald-hover);
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+}
+
+.pdf-viewport-wrapper.interactive .pdf-interactive-overlay {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .pdf-fallback {
